@@ -15,4 +15,21 @@ class ProductsController extends Controller
     public function newproduct(){
       return view('product.new');
     }
+
+    public function create(Request $request){
+      $errors         = array();  	// array to hold validation errors
+	$data 			= array(); 		// array to pass back data
+
+
+
+
+
+
+
+//return json(['success' => true, 'url'=>$request]);
+
+ return response()->json(['name' => 'Abigail']);
+
+}
+
 }

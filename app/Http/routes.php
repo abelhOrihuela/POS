@@ -24,6 +24,11 @@ Route::get('/product/new', [
   'as'   => 'product_new_path'
 ]);
 
+Route::post('/product/new', [
+  'uses' => 'ProductsController@create',
+  'as'   => 'product_create_path'
+]);
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
