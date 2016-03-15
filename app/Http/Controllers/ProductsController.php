@@ -19,8 +19,19 @@ class ProductsController extends Controller
     $errors         = array();  	// array to hold validation errors
     $data 			= array(); 		// array to pass back data
 
-    $product=Product::create();
+    $product=new Product();
+    $product->name=$request->name;
+    $product->description1=$request->description1;
+    $product->description2=$request->description2;
+    $product->code=$request->code;
+    $product->other=$request->other;
 
-    return response()->json(['name' => 'Abigail']);
+    if($product->save()){
+      return response()->json(['return' => 'Operacion exitosa...']);
+    }else{
+      return response()->json(['return' => 'Operacion fallida...']);
+    }
+
+
   }
 }
