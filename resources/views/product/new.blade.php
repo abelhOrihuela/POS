@@ -1,5 +1,9 @@
 @extends('layout.default')
 
+<div id="succes">
+
+</div>
+
 <form method="post"  class="form-horizontal">
 
   {{ csrf_field() }}
@@ -39,19 +43,18 @@ $(document).ready(function() {
       dataType  : 'json', // what type of data do we expect back from the server
       encode    : true
     })
-      .done(function(data) {
-        console.log(data);
-        if ( ! data.success) {
-          alert("Hola1");
-        } else {
-          alert("Hola1");
-        }
-      })
-      .fail(function(data) {
-        console.log(data);
-      });
-
+    .done(function(data) {
+      console.log(data);
+      $('#succes').append("Operacion exitosa");
+      if ( ! data.success) {
+        console.log("No succes :"+data);
+      } else {
+        console.log("Error otro: "+data);
+      }
+    })
+    .fail(function(data) {
+      console.log(data);
+    });
   });
-
 });
 </script>

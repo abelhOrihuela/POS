@@ -14,6 +14,6 @@
     <div class="container__main">
       @yield('container__main')
     </div>
-
+<script src="{{ asset('css/jquery-1.12.1.min.js')}}" charset="utf-8"></script>
   </body>
 </html>
