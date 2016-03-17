@@ -38,8 +38,9 @@ $(document).ready(function() {
     })
       .done(function(data) {
         console.log(data);
-        if ( ! data.success) {
-          $('.msg-alert').append(" "+ data.ok +" ");
+        if ( ! data.product) {
+          $('.msg-alert').append(data.description1);
+          $('.msg-alert').append('<h1>Hola</h1>');
         } else {
           alert("Hola1");
         }

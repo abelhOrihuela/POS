@@ -43,9 +43,13 @@ class ProductsController extends Controller
 
     if($request->ajax()){
 
-      $product=Product::where('code', "=", $request->code);
+      $product=Product::where('code', "=", $request->code)->first();
 
-      return response()->json(['succes' => true, 'ok' => 'Operacion exitosa' ]);
+       return response()->json($product->first());
+
+    //  return response()->json(['succes' => true, 'name' => $product->name  ]);
+
+      //return Response::json(['success' => true, 'url'=>$candidate->url]);
     }
 
   }
