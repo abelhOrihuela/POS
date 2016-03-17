@@ -1,26 +1,22 @@
 @extends('layout.default')
 
-<div id="succes">
-
-</div>
-
 <form method="post"  class="form-horizontal">
 
   {{ csrf_field() }}
   <label for="name">Nombre :</label>
-  <input type="text" name="name" value="">
+  <input type="text" name="name" value="" id="name" required>
 
   <label for="name">Descripcion :</label>
-  <input type="text" name="name" value="">
+  <input type="text" name="description1" value="" required>
 
   <label for="name"> Descripcion 2:</label>
-  <input type="text" name="name" value="">
+  <input type="text" name="description2" value="">
 
   <label for="name">Otro :</label>
-  <input type="text" name="name" value="">
+  <input type="text" name="other" value="" >
 
   <label for="name">Codigo :</label>
-  <input type="text" name="codigo" value="">
+  <input type="text" name="code" value="" id="codigo"required>
 
   <input type="submit" name="name" value="Guardar" id="form">
 
@@ -32,7 +28,7 @@ $(document).ready(function() {
     event.preventDefault();
 
     var formData = {
-      'username'        : $('#code').val(),
+      'username'        : $('#codigo').val(),
       'url'        : $('#name').val(),
     };
 
@@ -43,18 +39,19 @@ $(document).ready(function() {
       dataType  : 'json', // what type of data do we expect back from the server
       encode    : true
     })
-    .done(function(data) {
-      console.log(data);
-      $('#succes').append("Operacion exitosa");
-      if ( ! data.success) {
-        console.log("No succes :"+data);
-      } else {
-        console.log("Error otro: "+data);
-      }
-    })
-    .fail(function(data) {
-      console.log(data);
-    });
+      .done(function(data) {
+        console.log(data);
+        if ( ! data.success) {
+          alert("Hola1");
+        } else {
+          alert("Hola1");
+        }
+      })
+      .fail(function(data) {
+        console.log(data);
+      });
+
   });
+
 });
 </script>

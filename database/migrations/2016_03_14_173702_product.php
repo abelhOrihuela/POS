@@ -18,7 +18,7 @@ class Product extends Migration
         $table->string('name');
         $table->string('description1');
         $table->string('description2');
-        $table->string('code')->unique();
+        $table->double('code');//->unique();
         $table->string('other');
         $table->timestamps();
       });

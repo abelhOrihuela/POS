@@ -25,7 +25,7 @@ $factory->define(App\Product::class, function (Faker\Generator $faker) {
         'name' => "Product ",
         'description1' => $faker->text,
         'description2' => $faker->text,
-        'code' => str_random(10),
+        'code' => "125",
         'other' => $faker->text,
     ];
 });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Product;
 
 class ProductsController extends Controller
 {
@@ -19,17 +20,11 @@ class ProductsController extends Controller
     $errors         = array();  	// array to hold validation errors
     $data 			= array(); 		// array to pass back data
 
-    $product=new Product();
-    $product->name=$request->name;
-    $product->description1=$request->description1;
-    $product->description2=$request->description2;
-    $product->code=$request->code;
-    $product->other=$request->other;
 
-    if($product->save()){
-      return response()->json(['return' => 'Operacion exitosa...']);
-    }else{
-      return response()->json(['return' => 'Operacion fallida...']);
+    if($request->ajax()){
+
+
+      return response()->json(['return' => $request->all()]);
     }
 
 
