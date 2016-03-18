@@ -2,13 +2,6 @@
 
 
 @section('container__main')
-
-
-
-<div class="msg-alert">
-
-</div>
-
 <form method="post"  class="form-horizontal">
 
   {{ csrf_field() }}
@@ -19,9 +12,25 @@
   <input type="submit" name="name" value="Search" id="form">
 
 </form>
+
+<div id="price-total">
+<label for="total"></label>
+  <input type="tetx" name="total" id="input-total">
+</div>
+
+<div class="msg-alert-error">
+
+</div>
+<div class="contain-products">
+
+</div>
+
+
 <script src="{{ asset('css/jquery-1.12.1.min.js')}}" charset="utf-8"></script>
 <script type="text/javascript">
 $(document).ready(function() {
+
+  var total=0;
   $('#form').click(function(event) {
     event.preventDefault();
 
@@ -38,11 +47,15 @@ $(document).ready(function() {
     })
       .done(function(data) {
         console.log(data);
-        if ( ! data.product) {
-          $('.msg-alert').append(data.description1);
-          $('.msg-alert').append('<h1>Hola</h1>');
+        if (! data.description1) {
+          $('.msg-alert-error').html('<h2>No exist : '+$('#code').val()+'</h2>');
+
+
+
         } else {
-          alert("Hola1");
+          $('.contain-products').append("<div class='product'><section class='product-code'>"+data.code+"</section><section class='product-code'>"+data.description1+"</section><section class='product-code'>"+data.price+"</section></div>");
+          total+=parseInt(data.code);
+          $('#price-total').html('Subtotal : '+total);
         }
       })
       .fail(function(data) {

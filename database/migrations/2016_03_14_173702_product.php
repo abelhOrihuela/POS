@@ -15,10 +15,11 @@ class Product extends Migration
       Schema::create('products', function (Blueprint $table) {
 
         $table->increments('id');
+        $table->double('code')->unique();
         $table->string('name');
         $table->string('description1');
-        $table->string('description2');
-        $table->double('code');//->unique();
+        $table->string('cost');
+        $table->double('price');->unique();
         $table->string('other');
         $table->timestamps();
       });
