@@ -15,6 +15,7 @@
 
 
   <link rel="stylesheet" href="{{ asset('css/pure-min.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/pos.css') }}">
   <!--[if lte IE 8]>
 
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">

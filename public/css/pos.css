@@ -1,0 +1,19 @@
+.product{
+  display: block;
+  border: 1px solid gray;
+  border-radius: 3px;
+  margin: 2px;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+
+.product-code{
+  color: red;
+  text-align: right;
+}
+
+.form-search input {
+  color: black;
+}
