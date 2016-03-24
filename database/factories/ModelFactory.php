@@ -22,10 +22,11 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 
 $factory->define(App\Product::class, function (Faker\Generator $faker) {
     return [
+        'code' => $faker->randomNumber($nbDigits = 5),
         'name' => "Product ",
         'description1' => $faker->text,
-        'description2' => $faker->text,
-        'code' => $faker->randomNumber($nbDigits = 5),
+        'cost' => $faker->randomFloat($nbMaxDecimals = 2, $min = 0, $max = NULL) ,
+        'price' => $faker->randomFloat($nbMaxDecimals = 3, $min = 0, $max = NULL),
         'other' => $faker->text,
     ];
 });
