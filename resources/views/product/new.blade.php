@@ -9,28 +9,50 @@
 
 </div>
 
-<form method="post"  class="form-horizontal">
 
+
+<form class="pure-form pure-form-stacked">
   {{ csrf_field() }}
+    <fieldset>
+        <legend>Crear registro</legend>
 
-  <label for="name">Nombre :</label>
-  <input type="text" name="name" value="" id="name" >
+        <div class="pure-g">
+            <div class="pure-u-1 pure-u-md-1-3">
+                <label for="first-name">Nombre</label>
+                <input id="name" class="pure-u-23-24" type="text" >
+            </div>
 
-  <label for="name">Descripcion :</label>
-  <input type="text" name="description1" value="" id="description1" >
+            <div class="pure-u-1 pure-u-md-1-3">
+                <label for="last-name">Descripción</label>
+                <input id="description" class="pure-u-23-24" type="text">
+            </div>
 
-  <label for="name"> Descripcion 2:</label>
-  <input type="text" name="description2" value="" id="description2">
+            <div class="pure-u-1 pure-u-md-1-3">
+                <label for="last-name">Costo</label>
+                <input id="cost" class="pure-u-23-24" type="text">
+            </div>
 
-  <label for="name">Otro :</label>
-  <input type="text" name="other" value="" id="other" >
+            <div class="pure-u-1 pure-u-md-1-3">
+                <label for="last-name">Precio</label>
+                <input id="price" class="pure-u-23-24" type="text">
+            </div>
 
-  <label for="name">Codigo :</label>
-  <input type="text" name="code" value="" id="code" required>
+            <div class="pure-u-1 pure-u-md-1-3">
+                <label for="last-name">Otro</label>
+                <input id="other" class="pure-u-23-24" type="text">
+            </div>
 
-  <input type="submit" name="name" value="Guardar" id="form">
+            <div class="pure-u-1 pure-u-md-1-3">
+                <label for="last-name">Codigo</label>
+                <input id="code" class="pure-u-23-24" type="text">
+            </div>
 
+        </div>
+        <input type="submit" class="pure-button pure-button-primary" value="Save" id="form">
+    </fieldset>
 </form>
+
+
 <script src="{{ asset('css/jquery-1.12.1.min.js')}}" charset="utf-8"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -39,8 +61,9 @@ $(document).ready(function() {
 
     var formData = {
       'name'        : $('#name').val(),
-      'description1'        : $('#description1').val(),
-      'description2'        : $('#description2').val(),
+      'description'        : $('#description').val(),
+      'cost'        : $('#cost').val(),
+      'price'        : $('#price').val(),
       'other'        : $('#other').val(),
       'code'        : $('#code').val()
     };
