@@ -36,14 +36,13 @@
   <div id="layout" class="pure-g">
     <div class="sidebar pure-u-1 pure-u-md-1-4">
       <div class="header">
-        <h1 class="brand-title">Charly</h1>
-        <h2 class="brand-tagline">Vinos, abarrotes y todo lo que buscas</h2>
+
+
 
         <form method="post"  class="form-search">
 
           {{ csrf_field() }}
 
-          <label for="name">Nombre :</label>
           <input type="text" name="name" value="" id="code" >
 
           <input type="submit" name="name" value="Search" id="form">
@@ -56,8 +55,10 @@
         Articulos: <div id="articulos-total">
 
         </div>
-
+        <button class="button-success pure-button">Success Button</button>
+  <button class="button-error pure-button">Error Button</button>
       </div>
+
     </div>
 
     <div class="content pure-u-1 pure-u-md-3-4">

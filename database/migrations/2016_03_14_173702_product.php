@@ -18,8 +18,8 @@ class Product extends Migration
         $table->double('code')->unique();
         $table->string('name');
         $table->string('description');
-        $table->string('cost');
-        $table->double('price')->unique();
+        $table->float('cost');
+        $table->float('price');
         $table->string('other');
         $table->timestamps();
       });

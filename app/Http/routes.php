@@ -34,6 +34,11 @@ Route::post('/product/search', [
   'as'   => 'product_store_path'
 ]);
 
+Route::get('/product/list', [
+  'uses' => 'ProductsController@listProducts',
+  'as'   => 'product_list_path'
+]);
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

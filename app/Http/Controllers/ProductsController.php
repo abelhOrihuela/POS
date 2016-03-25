@@ -25,8 +25,8 @@ class ProductsController extends Controller
       $product= new Product();
       $product->name=$request->name;
       $product->description=$request->description;
-      $product->cost=$request->cost;
-      $product->price=$request->price;
+      $product->cost=parseFloat($request->cost);
+      $product->price=parseFloat($request->price);
       $product->other=$request->other;
       $product->code=$request->code;
 
@@ -59,5 +59,11 @@ class ProductsController extends Controller
       //return Response::json(['success' => true, 'url'=>$candidate->url]);
     }
 
+  }
+
+  public function listProducts(){
+    $products=Product::all();
+
+    return view('product.list')->with('products', $products);
   }
 }
