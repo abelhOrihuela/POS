@@ -25,8 +25,8 @@ class ProductsController extends Controller
       $product= new Product();
       $product->name=$request->name;
       $product->description=$request->description;
-      $product->cost=parseFloat($request->cost);
-      $product->price=parseFloat($request->price);
+      $product->cost=$request->cost;
+      $product->price=$request->price;
       $product->other=$request->other;
       $product->code=$request->code;
 
